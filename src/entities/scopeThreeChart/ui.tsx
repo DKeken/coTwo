@@ -28,12 +28,10 @@ export const ScopeThreeChart = () => {
     legend: {
       layout: "vertical",
       position: "left",
-      selected: parameters.reduce(
-        (acc, parameter, index) => (
-          (acc[parameter] = index < 3 || Math.random() < 0.1), acc
-        ),
-        {}
-      ),
+      selected: parameters.reduce((acc, parameter, index) => {
+        acc[parameter] = index < 3 || Math.random() < 0.1;
+        return acc;
+      }, {} as { [key: string]: boolean }),
     },
   };
 

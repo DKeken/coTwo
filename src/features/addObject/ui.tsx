@@ -40,6 +40,32 @@ export const AddObject = (props: ButtonProps) => {
         }}
         headerStyle={{ background: "#00be37" }}
         bodyStyle={{ background: "#141b22" }}
+        footerStyle={{
+          padding: 0,
+          background: "#141b22",
+        }}
+        footer={
+          <div className="flex">
+            <Button
+              onClick={() => {
+                form.resetFields();
+                buttonClicked();
+              }}
+              className={
+                "w-[50%] h-[60px] rounded-none border-none bg-zinc-700 text-white font-medium"
+              }
+            >
+              Отмена
+            </Button>
+            <Button
+              className={
+                "w-[50%] h-[60px] rounded-none border-none bg-sky-400 text-gray-900 font-medium"
+              }
+            >
+              Сохранить
+            </Button>
+          </div>
+        }
       >
         <Form form={form}>
           <Typography.Text className="text-white text-xl font-normal">

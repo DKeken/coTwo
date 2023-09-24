@@ -1,9 +1,10 @@
 import { DynamicsOfEmissionsBySphereChart } from "@/entities/dynamicsOfEmissionsBySphereChart/ui";
+import { ScopeThreeChart } from "@/entities/scopeThreeChart/ui";
+import { OpenObjectsModal } from "@/features/openObjectsModal/ui";
 import { GlobalWarmingImage } from "@/shared/assets/GlobalWarmingImage";
 import { TotalEmissionsImage } from "@/shared/assets/TotalEmissionsImage";
+import { ChartInfoTooltip } from "@/shared/ui/chartInfoTooltip";
 import { Card } from "antd";
-
-import React from "react";
 
 const DashboardHeader = () => {
   return (
@@ -14,14 +15,7 @@ const DashboardHeader = () => {
             23 000 тн
           </div>
           <TotalEmissionsImage />
-          <div className="absolute left-[22%] bottom-[22%]">
-            <div className="w-[180px] h-9 relative">
-              <div className="w-[180px] h-9 left-0 top-0 absolute bg-gray-900 bg-opacity-80 rounded-[50px]" />
-              <div className="left-[14px] top-[9px] absolute text-white text-[15px] font-normal  underline">
-                Распределение по ДО
-              </div>
-            </div>
-          </div>
+          <OpenObjectsModal />
         </div>
         <div className="relative flex items-end">
           <div className="text-center text-rose-600 text-[32px] font-bold absolute top-[-11%] left-[41%]">
@@ -114,6 +108,9 @@ const DashboardScopeTwo = () => (
 const DashboardScopeThree = () => (
   <>
     <div className="text-[#9662D9] text-2xl font-medium">2 000 тн</div>
+    <div className="w-full h-[310px]">
+      <ScopeThreeChart />
+    </div>
   </>
 );
 
@@ -177,6 +174,34 @@ export default function Home() {
           headStyle={{ height: 38, minHeight: 38 }}
         >
           <DashboardScopeThree />
+          {[
+            {
+              position: {
+                bottom: "8.5%",
+                left: "24.7%",
+              },
+              id: "1",
+              name: "Приобретение топлива",
+            },
+            {
+              position: {
+                bottom: "8.5%",
+                left: "59.7%",
+              },
+              id: "2",
+              name: "Приобретение топлива",
+            },
+            {
+              position: {
+                bottom: "8.5%",
+                left: "80.7%",
+              },
+              id: "3",
+              name: "Реализация продукта",
+            },
+          ].map((props) => (
+            <ChartInfoTooltip props={props} key={props.id} />
+          ))}
         </Card>
       </div>
     </main>

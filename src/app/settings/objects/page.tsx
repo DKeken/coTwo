@@ -1,5 +1,4 @@
 import { ObjectsTable } from "@/entities/objectsTable/ui";
-import { ConfigProvider } from "antd";
 
 export default function Objects() {
   return (

@@ -21,10 +21,12 @@ const tabs = [
   {
     title: "Интеграция",
     path: "/integration",
+    disabled: true,
   },
   {
     title: "Отчеты",
     path: "/reports",
+    disabled: true,
   },
 ];
 
@@ -37,12 +39,18 @@ export const SettingsTabs = () => {
         const tabRoute = `/settings${tab.path}`;
         const color = pathname.includes(tabRoute)
           ? "#ffffff"
-          : tab.title === "Интеграция" || tab.title === "Отчеты"
+          : tab.disabled
           ? "rgb(255 255 255 / 20%)"
           : "#ffffff7c";
 
         return (
-          <Link key={tab.path} href={tabRoute} className="hover:opacity-50">
+          <Link
+            key={tab.path}
+            href={tabRoute}
+            className={`hover:opacity-50 ${
+              tab.disabled ? "pointer-events-none" : ""
+            }`}
+          >
             <div
               className={`h-[32px] flex items-center justify-center pb-2 ${
                 pathname.includes(tabRoute) ? "border-b-2" : "border-b-0"

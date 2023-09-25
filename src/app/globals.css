@@ -290,7 +290,7 @@ body {
   padding: 11px !important;
 }
 
-.scopeMainTable .ant-table-cell.ant-table-cell-scrollbar {
+.ant-table-cell.ant-table-cell-scrollbar {
   display: none;
 }
 

@@ -85,7 +85,7 @@ export const OpenObjectsModal = () => {
   return (
     <>
       <div
-        className="absolute left-[22%] bottom-[22%] cursor-pointer"
+        className="absolute left-[22%] bottom-[22%] cursor-pointer invisible"
         onClick={() => buttonClicked()}
       >
         <div className="w-[180px] h-9 relative">

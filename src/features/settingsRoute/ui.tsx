@@ -9,10 +9,14 @@ export const SettingsRouteButton = () => {
   const isDashboard = pathname === "/";
 
   return (
-    <Link href={"/settings/objects"} style={{ height: "100%" }}>
+    <Link
+      href={"/settings/objects"}
+      style={{ height: "100%" }}
+      className={`${pathname.includes("zn") ? "pointer-events-none" : ""}`}
+    >
       <div
         className={`flex justify-center items-center border-l border-gray-800 h-full w-16 hover:bg-sky-400 ${
-          !isDashboard ? "bg-sky-400" : ""
+          pathname.includes("settings") ? "bg-sky-400" : ""
         }`}
       >
         <SettingsIcon />

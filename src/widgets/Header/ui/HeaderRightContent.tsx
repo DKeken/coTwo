@@ -5,11 +5,10 @@ import { usePathname } from "next/navigation";
 
 export const HeaderRightContent = () => {
   const pathname = usePathname();
-  const isDashboard = pathname === "/";
 
   return (
     <div className="flex flex-row items-center gap-[16px]">
-      {isDashboard && (
+      {!pathname.includes('settings') && (
         <div className="flex gap-4 items-center hover:opacity-50 cursor-pointer">
           <div className="text-white text-base font-normal">Рекомендации</div>
           <div className="w-9 h-9 relative">

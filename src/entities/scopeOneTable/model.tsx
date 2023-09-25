@@ -1,18 +1,20 @@
-import { createStore } from "effector";
+import { createEvent, createStore, sample } from "effector";
 
 export interface ScopeOne {
   key: string;
   source?: string;
   workshopName?: string;
   fuelType?: string;
-  fuelConsumption?: string;
-  lowCalorificValue?: number | "-";
-  fuelConsumptionInEnergy?: number | "-";
+  fuelConsumption?: number;
+  lowCalorificValue?: number;
+  fuelConsumptionInEnergy?: number;
   fuelOxidationFactor?: number;
   COEmissionFactor?: number;
   VPG?: number;
   total?: boolean;
 }
+
+export const dataChanged = createEvent<ScopeOne[]>();
 
 export const $data = createStore<ScopeOne[]>([
   {
@@ -20,21 +22,21 @@ export const $data = createStore<ScopeOne[]>([
     source: "НЭС-1",
     workshopName: "Энергоцентр №3",
     fuelType: "Нефть",
-    fuelConsumption: "0.100 тыс. т",
-    lowCalorificValue: 41.9,
-    fuelConsumptionInEnergy: 4.19,
+    fuelConsumption: 0.05,
+    lowCalorificValue: 42.5,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
-    COEmissionFactor: 73.3,
-    VPG: 315,
+    COEmissionFactor: 74.1,
+    VPG: 0,
   },
   {
     key: "2",
     source: "ДЭС",
     workshopName: "-",
     fuelType: "Топливо дизельное",
-    fuelConsumption: "2.000 тыс. т",
+    fuelConsumption: 2000,
     lowCalorificValue: 42.5,
-    fuelConsumptionInEnergy: 4.25,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 74.1,
     VPG: 6299,
@@ -44,9 +46,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "ДЭС",
     workshopName: "-",
     fuelType: "Топливо дизельное",
-    fuelConsumption: "3.000 тыс. т",
+    fuelConsumption: 3000,
     lowCalorificValue: 42.5,
-    fuelConsumptionInEnergy: 4.25,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 74.1,
     VPG: 9448,
@@ -56,9 +58,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "ДЭС",
     workshopName: "-",
     fuelType: "Топливо дизельное",
-    fuelConsumption: "6.000 тыс. т",
+    fuelConsumption: 6000,
     lowCalorificValue: 42.5,
-    fuelConsumptionInEnergy: 4.25,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 74.1,
     VPG: 18896,
@@ -68,9 +70,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "Котельная",
     workshopName: "Система теплоснабжения",
     fuelType: "ПНГ",
-    fuelConsumption: "10 000.000 тыс. м3",
-    lowCalorificValue: "-",
-    fuelConsumptionInEnergy: "-",
+    fuelConsumption: 10000,
+    lowCalorificValue: 0,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 3.3948,
     VPG: 23854,
@@ -80,9 +82,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "Котельная",
     workshopName: "Система теплоснабжения",
     fuelType: "ПНГ",
-    fuelConsumption: "1 000.000 тыс. м3",
-    lowCalorificValue: "-",
-    fuelConsumptionInEnergy: "-",
+    fuelConsumption: 10000,
+    lowCalorificValue: 0,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 3.3948,
     VPG: 22990,
@@ -92,9 +94,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "НЭС-2",
     workshopName: "Энергоцентр",
     fuelType: "Нефть",
-    fuelConsumption: "0.500",
+    fuelConsumption: 0.5,
     lowCalorificValue: 41.9,
-    fuelConsumptionInEnergy: 1,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 73.3,
     VPG: 1593,
@@ -104,9 +106,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "НЭС-3",
     workshopName: "Энергоцентр",
     fuelType: "Нефть",
-    fuelConsumption: "0.100",
+    fuelConsumption: 0.1,
     lowCalorificValue: 41.9,
-    fuelConsumptionInEnergy: 1,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 73.3,
     VPG: 307,
@@ -116,9 +118,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "ГТУ 1",
     workshopName: "Энергоцентр №1",
     fuelType: "ПНГ",
-    fuelConsumption: "1 000.000 тыс. м3",
-    lowCalorificValue: "-",
-    fuelConsumptionInEnergy: "-",
+    fuelConsumption: 10000,
+    lowCalorificValue: 0,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 3.3948,
     VPG: 33948,
@@ -128,9 +130,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "ГТУ 2",
     workshopName: "Энергоцентр №2",
     fuelType: "ПНГ",
-    fuelConsumption: "1 000.000 тыс. м3",
-    lowCalorificValue: "-",
-    fuelConsumptionInEnergy: "-",
+    fuelConsumption: 10000,
+    lowCalorificValue: 0,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 2.3854,
     VPG: 23854,
@@ -140,9 +142,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "Печь П2",
     workshopName: "Площадка печей",
     fuelType: "ПНГ",
-    fuelConsumption: "1 000.000 тыс. м3",
-    lowCalorificValue: "-",
-    fuelConsumptionInEnergy: "-",
+    fuelConsumption: 10000,
+    lowCalorificValue: 0,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 2.3854,
     VPG: 33948,
@@ -152,9 +154,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "Печь П4",
     workshopName: "Площадка печей",
     fuelType: "ПНГ",
-    fuelConsumption: "1 000.000 тыс. м3",
-    lowCalorificValue: "-",
-    fuelConsumptionInEnergy: "-",
+    fuelConsumption: 10000,
+    lowCalorificValue: 0,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 2.3854,
     VPG: 23854,
@@ -164,9 +166,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "ДЭС",
     workshopName: "-",
     fuelType: "Топливо дизельное",
-    fuelConsumption: "3.000 тыс. т",
+    fuelConsumption: 3000,
     lowCalorificValue: 42.5,
-    fuelConsumptionInEnergy: 4.25,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 74.1,
     VPG: 9448,
@@ -176,9 +178,9 @@ export const $data = createStore<ScopeOne[]>([
     source: "ДЭС",
     workshopName: "-",
     fuelType: "Топливо дизельное",
-    fuelConsumption: "0.100 тыс. т",
+    fuelConsumption: 0.1,
     lowCalorificValue: 42.5,
-    fuelConsumptionInEnergy: 4.25,
+    fuelConsumptionInEnergy: 0,
     fuelOxidationFactor: 1.0,
     COEmissionFactor: 74.1,
     VPG: 315,
@@ -188,3 +190,10 @@ export const $data = createStore<ScopeOne[]>([
     total: true,
   },
 ]);
+
+sample({
+  clock: dataChanged,
+  source: $data,
+  fn: (source, changed) => changed,
+  target: $data,
+});

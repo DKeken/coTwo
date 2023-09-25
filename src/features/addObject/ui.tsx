@@ -44,6 +44,7 @@ export const AddObject = (props: ButtonProps) => {
           padding: 0,
           background: "#141b22",
         }}
+        className="hiddenCloseOnDrawer"
         footer={
           <div className="flex">
             <Button
@@ -99,6 +100,7 @@ export const AddObject = (props: ButtonProps) => {
           <Form.Item>
             <Select placeholder="Методика расчета" />
           </Form.Item>
+          <div className="text-white text-xl font-normal">Выбросы</div>
         </Form>
       </Drawer>
     </>

@@ -8,17 +8,7 @@ import React from "react";
 
 export const ScopeThreeTable = () => {
   const dataSource = useUnit($data);
-  /*  key: string;
-  source?: string;
-  VPG?: number;
-  costOfPurchasedGoods?: string;
-  emissionFactor?: number;
-  costOfTheAcquired?: string;
-  emissionFactorPerUnit?: number;
-  quantityOfPurchasedEnergy?: number;
-  quantityOfPurchasedFuels?: number;
-  emissionFactorPerUnitOfFuelPurchased?: number;
-  total?: boolean; */
+
   const columns: ColumnsType<ScopeTwo> = [
     {
       title: "Название источника",

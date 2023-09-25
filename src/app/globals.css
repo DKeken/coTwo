@@ -204,4 +204,126 @@ body {
   padding: 11px !important;
 }
 
-/*  */
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого по Сфере 1"] {
+  background-color: #356f8c !important;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого по Сфере 2"] {
+  background-color: #6c7a51 !important;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого по Сфере 3"] {
+  background-color: #5b4587 !important;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Общее по сферам"] {
+  background-color: #bbbfc2 !important;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого по Сфере 1"]
+  .ant-table-cell:first-child {
+  color: #141b22 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого по Сфере 2"]
+  .ant-table-cell:first-child {
+  color: #141b22 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого по Сфере 3"]
+  .ant-table-cell:first-child {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Общее по сферам"]
+  .ant-table-cell:first-child {
+  color: #141b22 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Общее по сферам"]
+  .ant-table-cell:last-child {
+  color: #141b22 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Общее по сферам"]
+  .ant-table-cell:first-child {
+  background-color: #bbbfc2 !important;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="1"]
+  .ant-table-cell:first-child {
+  color: #4ab5e3 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="6"]
+  .ant-table-cell:first-child {
+  color: #6c7a51 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="8"]
+  .ant-table-cell:first-child {
+  color: #5b4587 !important;
+  font-weight: 500;
+}
+
+.scopeMainTable .ant-table-cell {
+  padding: 11px !important;
+}
+
+.scopeMainTable .ant-table-cell.ant-table-cell-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(21, 28, 36);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: rgb(21, 28, 36);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgb(21, 28, 36);
+  border-radius: 3px;
+}
+
+::-ms-scrollbar-thumb {
+  background-color: rgb(21, 28, 36);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.hiddenCloseOnDrawer .ant-drawer-close {
+  display: none;
+}

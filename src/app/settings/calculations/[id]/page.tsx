@@ -1,3 +1,4 @@
+import { ScopeMainTable } from "@/entities/scopeMainTable/ui";
 import { ScopeOneTable } from "@/entities/scopeOneTable/ui";
 import { ScopeThreeTable } from "@/entities/scopeThreeTable/ui";
 import { ScopeTwoTable } from "@/entities/scopeTwoTable/ui";
@@ -10,7 +11,7 @@ export default function Page({ params }: { params: { id: string } }) {
       {params.id === "1-1" && <ScopeOneTable />}
       {params.id === "1-6" && <ScopeTwoTable />}
       {params.id === "1-8" && <ScopeThreeTable />}
-      {params.id === "1-8" && <ScopeThreeTable />}
+      {params.id === "3" && <ScopeMainTable />}
     </div>
   );
 }

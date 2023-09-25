@@ -77,6 +77,15 @@ export const ScopeThreeTable = () => {
       title: "Стоимость приобретенного средства по видам, долл. США",
       dataIndex: "costOfTheAcquired",
       width: 160,
+      render: (_, data) => {
+        if (!data?.total) {
+          return (
+            <Typography.Text className="text-white">
+              {data.costOfTheAcquired} USD
+            </Typography.Text>
+          );
+        }
+      },
     },
     {
       title:

@@ -25,13 +25,28 @@ export const ScopeThreeChart = () => {
         "g2-tooltip-value": { color: "#ffffff80" },
       },
     },
+    yAxis: {
+      grid: { line: { style: { opacity: 0.1 } } },
+      label: { style: { opacity: 0.3 } },
+    },
+    xAxis: { line: { style: { lineWidth: 0 } } },
+    color: ["#DD3448", "#00BE37"],
     legend: {
       layout: "vertical",
       position: "left",
-      selected: parameters.reduce((acc, parameter, index) => {
-        acc[parameter] = index < 3 || Math.random() < 0.1;
-        return acc;
-      }, {} as { [key: string]: boolean }),
+      selected: {
+        "Приобретение товаров": false,
+        "Приобретение средств производства": false,
+        "Приобретение топлива и энергоресурсов": false,
+        "Транспорт и распределение": true,
+        "Обращение с отходами": false,
+        "Командирование сотрудников": false,
+        "Перемещение сотрудников": false,
+        "Активы в лизинге": false,
+        "Распределение реализованной": false,
+        "Подготовка, переработка": false,
+        Утилизация: true,
+      },
     },
   };
 

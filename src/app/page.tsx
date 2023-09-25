@@ -134,7 +134,7 @@ export default function Home() {
             bordered={false}
             className="bg-[#172028] w-[1150px] rounded-lg shadow border-none"
             bodyStyle={{ padding: "0px 22px" }}
-            headStyle={{ height: 38, minHeight: 38 }}
+            headStyle={{ height: 46, minHeight: 38 }}
           >
             <DashboardScopeOne />
           </Card>
@@ -152,7 +152,7 @@ export default function Home() {
             bordered={false}
             className="bg-[#172028] grow-[1] rounded-lg shadow border-none "
             bodyStyle={{ padding: "0px 22px" }}
-            headStyle={{ height: 38, minHeight: 38 }}
+            headStyle={{ height: 46, minHeight: 38 }}
           >
             <DashboardScopeTwo />
           </Card>
@@ -171,13 +171,13 @@ export default function Home() {
           className="bg-[#172028] rounded-lg border-none"
           style={{ height: "calc(100% - 300px)" }}
           bodyStyle={{ padding: "0px 22px" }}
-          headStyle={{ height: 38, minHeight: 38 }}
+          headStyle={{ height: 46, minHeight: 38 }}
         >
           <DashboardScopeThree />
           {[
             {
               position: {
-                bottom: "8.5%",
+                bottom: "7%",
                 left: "24.7%",
               },
               id: "1",
@@ -185,15 +185,15 @@ export default function Home() {
             },
             {
               position: {
-                bottom: "8.5%",
-                left: "59.7%",
+                bottom: "7%",
+                left: "59.8%",
               },
               id: "2",
               name: "Приобретение топлива",
             },
             {
               position: {
-                bottom: "8.5%",
+                bottom: "7%",
                 left: "80.7%",
               },
               id: "3",

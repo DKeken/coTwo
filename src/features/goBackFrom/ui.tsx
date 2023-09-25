@@ -14,7 +14,7 @@ export const GoBackFrom = ({ id }: { id: string }) => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center gap-4 py-8 pl-1">
+    <div className="flex items-center gap-4 py-7 pl-1">
       <Link href={"./"}>
         <BackArrowIcon
           className="w-[20px]"
@@ -36,12 +36,14 @@ export const GoBackFrom = ({ id }: { id: string }) => {
             )}
           {pathname.includes("calculations") &&
             String(
-              calculationsTableMainData
-                .find((item) =>
-                  item?.children?.find((inner) => inner.key === id)
-                )
-                ?.children?.find((inner) => inner.key === id)?.name ||
-                "Ошибка..."
+              id.includes("-")
+                ? calculationsTableMainData
+                    .find((item) =>
+                      item?.children?.find((inner) => inner.key === id)
+                    )
+                    ?.children?.find((inner) => inner.key === id)?.name
+                : calculationsTableMainData.find((item) => item.key === id)
+                    ?.name || "Ошибка..."
             )}
         </Typography.Text>
       </div>

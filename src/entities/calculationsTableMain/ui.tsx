@@ -46,7 +46,12 @@ const columns: ColumnsType<CalculationsMain> = [
         );
       }
       return (
-        <Typography.Text className="text-white">{data.name}</Typography.Text>
+        <Link
+          href={`/settings/calculations/${data.key}`}
+          style={{ pointerEvents: data.disabled ? "none" : "all" }}
+        >
+          <Typography.Text className="text-white">{data.name}</Typography.Text>
+        </Link>
       );
     },
   },

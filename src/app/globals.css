@@ -161,3 +161,47 @@ body {
 .calculationsTable .ant-table-row.ant-table-row-level-0 {
   padding: 6px !important;
 }
+
+.scopeOneTable .ant-table-cell {
+  padding: 11px !important;
+}
+
+.scopeOneTable .ant-table-row.ant-table-row-level-0[data-row-key="Итого"] {
+  background-color: #356f8c !important;
+}
+
+.scopeTwoTable .ant-table-row.ant-table-row-level-0[data-row-key="Итого"] {
+  background-color: #6c7a51 !important;
+}
+
+.scopeOneTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого"]
+  .ant-typography {
+  font-weight: 700;
+}
+
+.scopeTwoTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого"]
+  .ant-typography {
+  font-weight: 700;
+}
+
+.scopeTwoTable .ant-table-cell {
+  padding: 11px !important;
+}
+
+.scopeThreeTable .ant-table-row.ant-table-row-level-0[data-row-key="Итого"] {
+  background-color: #5b4587 !important;
+}
+
+.scopeThreeTable
+  .ant-table-row.ant-table-row-level-0[data-row-key="Итого"]
+  .ant-typography {
+  font-weight: 700;
+}
+
+.scopeThreeTable .ant-table-cell {
+  padding: 11px !important;
+}
+
+/*  */
